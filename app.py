@@ -1,8 +1,10 @@
 import streamlit as st
 import helper
-import pickle
 
-model = pickle.load(open('model.pkl','rb'))
+from xgboost import XGBClassifier
+
+model = XGBClassifier()
+model.load_model('model.json')
 
 st.header('Duplicate Question Pairs')
 
